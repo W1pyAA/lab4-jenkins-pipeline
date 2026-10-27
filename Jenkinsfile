@@ -19,6 +19,7 @@ pipeline {
             agent {
                 docker {
                     image 'python:3.11-alpine'
+                    args '-u root'
                 }
             }
             steps {
@@ -27,7 +28,7 @@ pipeline {
             }
             post {
                 always {
-                    junit 'test-reports/*.xml'
+                    junit testResults: 'test-reports/*.xml', allowEmptyResults: true
                 }
                 success {
                     echo "Application testing successfully completed"
