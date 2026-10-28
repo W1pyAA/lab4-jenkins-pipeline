@@ -12,7 +12,7 @@ class FlaskAppTests(unittest.TestCase):
     def test_get_hello_endpoint(self):
         r = self.app.get('/')
         self.assertEqual(r.status_code, 200)
-        self.assertEqual(r.data, b'Hello World from app! It is Pipeline testing.')
+        self.assertEqual(r.data, b'Hello World from LAb4!')
 
 if __name__ == '__main__':
     runner = xmlrunner.XMLTestRunner(output='test-reports')
